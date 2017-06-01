@@ -1,0 +1,256 @@
+@font-face {
+	font-family: 'Impact';
+	src: url('avenir.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+	margin:0px;
+	font-family: 'Impact';
+	color:#FFFFFF;
+}
+
+#round {
+	position:absolute;
+	left:572px;
+	top: 3px;
+	width:300px;
+	font-size:30px;
+	font-family: 'Impact';
+	text-align:center;
+	color: white;
+}
+
+#commentary1 {
+	position:absolute;
+	right:0px;
+	top: 315px;
+	width:420px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;
+	color: white;
+}
+
+#commentary2 {
+	position:absolute;
+	right:0px;
+	top: 395px;
+	width:420px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;
+	color: white;
+}
+
+#board {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1920px;
+	height:1080px;
+	/*background-image:url('../melee_in_game.png');
+	*/
+}
+			
+			
+#player1 {
+	position: absolute;
+	left: 312px;
+	top: 2px;
+	width: 300px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;	
+	color:white;
+}
+			
+#player2 {
+	position: absolute;
+	left: 827px;
+	top: 2px;
+	width: 300px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:right;	
+	color:white;
+}
+
+#score1 {
+	position:absolute;
+	left:257px;
+	top: 0px;
+	width:40px;
+	font-size:36px;
+	font-family: 'Impact';
+	src: url('Belgrad.ttf') format('truetype');
+	text-align:center;
+	color: white;
+}
+			
+#score2 {
+	position:absolute;
+	left:1142px;
+	top: 0px;
+	width:40px;
+	font-size:36px;
+	font-family: 'Impact';
+	src: url('Belgrad.ttf') format('truetype');
+	text-align:center;
+	color: white;
+}
+
+#friendlies1 {
+	display:none;
+	position:absolute;
+	right:10px;
+	top: 370px;
+	width:360px;
+    font-size:40px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+   /*-webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;*/
+}
+
+#friendlies2 {
+	display:none;
+	position:absolute;
+	right:10px;
+	top: 450px;
+	width:360px;
+	font-size:40px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+   /*-webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;*/
+}
+
+#friendlies3 {
+	display:none;
+	position:absolute;
+	right:10px;
+	top: 530px;
+	width:360px;
+	font-size:40px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+   /*-webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;*/
+}
+
+#friendlies4 {
+	display:none;
+	position:absolute;
+	right:10px;
+	top: 610px;
+	width:360px;
+	font-size:40px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+   /*-webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;*/
+}
+#file-input {
+	display:none;
+	position: absolute;
+	font-size: 100px;
+	color:black;
+}
+
+#socPlayerLeft {
+	display:none;
+	position: absolute;
+	left: 40px;
+	top: 1046px;
+	width: 200px;
+	font-size:22px;
+	font-family: 'Impact';
+	text-align:left;	
+	color:white;
+}
+
+#socPlayerRight {
+	display:none;
+	position: absolute;
+	right: 40px;
+	top: 1046px;
+	width: 200px;
+	font-size:22px;
+	font-family: 'Impact';
+	text-align:right;
+	color:white;
+}
+
+#socCommentary1 {
+	display:none;
+	position:absolute;
+	left:110px;
+	top: 355px;
+	width:300px;
+	font-size:24px;
+	font-family: 'Impact';
+	text-align:left;
+	color: white;
+}
+
+#socCommentary2 {
+	display:none;
+	position:absolute;
+	left:110px;
+	top: 385px;
+	width:300px;
+	font-size:24px;
+	font-family: 'Impact';
+	text-align:left;
+	color: white;
+}
+
+#iconPlayerLeft {
+	display:none;
+	position: absolute;
+	display:none;
+	left: 5px;
+	top: 1046px;
+	width: 30px;
+	height: 30px;
+}
+#iconPlayerRight {
+	display:none;
+	position: absolute;
+	display:none;
+	right: 5px;
+	top: 1046px;
+	width: 30px;
+	height: 30px;
+}
+
+#iconCommentary1 {
+	display:none;
+	position: absolute;
+	display:none;
+	left:75px;
+	top: 355px;
+	width: 30px;
+	height: 30px;
+}
+
+#iconCommentary2 {
+	display:none;
+	position: absolute;
+	display:none;
+	left:75px;
+	top: 385px;
+	width: 30px;
+	height: 30px;
+}

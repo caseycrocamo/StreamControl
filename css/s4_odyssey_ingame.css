@@ -1,0 +1,298 @@
+@font-face {
+	font-family: 'Impact';
+	src: url('avenir.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+	fort-family:'Impact';
+	margin:0px;
+	color:#FFFFFF;
+}
+
+#round {
+	display:none;
+	position:absolute;
+	left:460px;
+	top: 75px;
+	width:1000px;
+	font-family: 'Impact';
+	src: url('avenir.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-size:30px;
+	text-align:center;
+	color: white;
+}
+
+#commentary1 {
+	display:none;
+	position:absolute;
+	right:30px;
+	top:37px;
+	width:225px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;
+	color: white;
+}
+
+#commentary2 {
+	display:none;
+	position:absolute;
+	right: 30px;
+	top: 117px;
+	width:225px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;
+	color: white;
+}
+
+#board {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1920px;
+	height:1080px;
+	/*background-image:url('../S4_Overlay-IV.png');*/
+	
+}
+			
+			
+#player1 {
+	display:none;
+	position: absolute;
+	right: 1060px;
+	top: 24px;
+	width: 470px;
+	font-family: 'Impact';
+	src: url('avenir.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-size:36px;
+	text-align:right;	
+	color:white;
+}
+			
+#player2 {
+	display:none;
+	position: absolute;
+	left: 1060px;
+	top: 24px;
+	width: 470px;
+	font-family: 'Impact';
+	src: url('avenir.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-size:36px;
+	text-align:left;	
+	color:white;
+}
+
+#score1 {
+	position:absolute;
+	left:910px;
+	top: 21px;
+	padding-bottom:0px;
+	width:100px;
+	font-family: 'Impact';
+	src: url('avenir.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-size:42px;
+	text-align:center;
+	color:#074b94;
+}
+			
+#score2 {
+	position:absolute;
+	right:890px;
+	padding-bottom:0px;
+	top: 1010px;
+	width:70px;
+	font-size:60px;
+	text-align:center;
+	color: #545454;
+}
+
+#friendlies1 {
+	display:none;
+	position:absolute;
+	right:10px;
+	top: 370px;
+	width:360px;
+    font-size:40px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+   /*-webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;*/
+}
+
+#friendlies2 {
+	display:none;
+	position:absolute;
+	right:10px;
+	top: 450px;
+	width:360px;
+	font-size:40px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+   /*-webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;*/
+}
+
+#friendlies3 {
+	display:none;
+	position:absolute;
+	right:10px;
+	top: 530px;
+	width:360px;
+	font-size:40px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+   /*-webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;*/
+}
+
+#friendlies4 {
+	display:none;
+	position:absolute;
+	right:10px;
+	top: 610px;
+	width:360px;
+	font-size:40px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+   /*-webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;*/
+}
+
+#file-input {
+	position: absolute;
+	font-size: 100px;
+	color:black;
+}
+
+#socPlayerLeft {
+	display:none;
+	position: absolute;
+	left: 480px;
+	top: 48px;
+	width: 300px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;	
+	color:#545454;
+}
+
+#socPlayerRight {
+	display:none;
+	position: absolute;
+	right: 480px;
+	top: 48px;
+	width: 300px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:right;
+	color:#545454;
+}
+
+#socCommentary1 {
+	display:none;
+	position:absolute;
+	left:630px;
+	top:110px;
+	width:300px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;
+	color: white;
+}
+
+#socCommentary2 {
+	display:none;
+	position:absolute;
+	right: 630px;
+	top: 110px;
+	width:300px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:right;
+	color: white;
+}
+
+#iconPlayerLeft {
+	display:none;
+	position: absolute;
+	left: 440px;
+	top: 50px;
+	height: 35px;
+	width: 35px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;	
+	color:black;
+}
+#iconPlayerRight {
+	display:none;
+	position: absolute;
+	right: 440px;
+	top: 50px;
+	width: 35px;
+	height: 35px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:right;
+	color:black;
+}
+
+#iconCommentary1 {
+	display:none;
+	position:absolute;
+	left:590px;
+	top:112px;
+	width:35px;
+	height: 35px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:left;
+	color: black;
+}
+
+#iconCommentary2 {
+	display:none;
+	position:absolute;
+	right: 590px;
+	top: 112px;
+	width:35px;
+	height:35px;
+	font-size:32px;
+	font-family: 'Impact';
+	text-align:right;
+	color: black;
+}
+
+#colorPlayerLeft{
+	display:none;
+	position:absolute;
+	bottom:45px;
+}
+
+#colorPlayerRight{
+	display:none;
+	position:absolute;
+	bottom:44px;
+	left:1025px;
+	
+}

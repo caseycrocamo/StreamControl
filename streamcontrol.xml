@@ -1,0 +1,18 @@
+<items>
+	<game>melee</game>
+	<playerLeft>[W] Bzaw</playerLeft>
+	<playerRight>[L] Lolsero</playerRight>
+	<scoreLeft>3-1</scoreLeft>
+	<scoreRight>0</scoreRight>
+	<round>Grand Finals BO5</round>
+	<commentary1>500gs</commentary1>
+	<commentary2>506gs</commentary2>
+	<socPlayerLeft>None</socPlayerLeft>
+	<socPlayerRight>None</socPlayerRight>
+	<socCommentary1>None</socCommentary1>
+	<socCommentary2>None</socCommentary2>
+	<iconPlayerLeft>twitch</iconPlayerLeft>
+	<iconPlayerRight>twitch</iconPlayerRight>
+	<iconCommentary1>twitch</iconCommentary1>
+	<iconCommentary2>twitch</iconCommentary2>
+</items>

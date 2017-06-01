@@ -1,0 +1,5 @@
+doesn't update (maybe cause blank social media tag)
+none on social media
+autocomplete not working
+data file is updating weird
+update stream settings from trike

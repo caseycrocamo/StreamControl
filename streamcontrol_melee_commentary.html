@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="en" xml:lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>StreamControl</title>
+		<link id="pagestyle" rel="stylesheet" href="css/melee_commentary.css" type="text/css" charset="utf-8">
+		<script src="js/jquery-2.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jstween-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	
+	<body>
+		<div id="board"></div>
+		<div id="round"></div>
+		<div id= "commentary1"></div>
+		<div id= "commentary2"></div>
+		<div id="player1" class="playername"></div>
+		<div id="player2" class="playername"></div>
+		<div id="friendlies1" class="playername"></div>
+		<div id="friendlies2" class="playername"></div>
+		<div id="friendlies3" class="playername"></div>
+		<div id="friendlies4" class="playername"></div>
+		<div id="score1" class="score"></div>
+		<div id="score2" class="score"></div>
+		<div id="socPlayerLeft"></div>
+		<div id="socPlayerRight"></div>
+		<div id="socCommentary1"></div>
+		<div id="socCommentary2"></div>
+		<img id="iconPlayerLeft"></div>
+		<img id="iconPlayerRight"></div>
+		<img id="iconCommentary1"></div>
+		<img id="iconCommentary2"></div>
+		<script type="text/javascript">
+		
+			//var game = "";
+			
+			var playerLeft = '';
+			var playerRight = ''; 
+			var scoreLeft = '';
+			var scoreRight = '';
+			
+			var round = '';
+			var commentary1 = '';
+			var commentary2 = '';
+			
+			var socPlayerLeft = "";
+			var socPlayerRight = "";
+			var iconPlayerLeft = "";
+			var iconPlayerRight = "";
+			
+			var socCommentary1 = "";
+			var socCommentary2 = "";
+			var iconCommentary1 = "";
+			var iconCommentary2 = "";
+			var count;
+			
+			var xmlDoc;
+				
+			var animating = false;
+			var doUpdate = false;
+			
+			function updateData(){
+				setTimeout(function loop() {
+					xmlDoc = $.getValues('http://localhost:8000/streamcontrol.xml');
+					updateVariables(xmlDoc);
+					//setGame(game);
+					updateBoard();
+					console.log('updated');
+					setTimeout(loop, 100);
+				}, 100);
+			}
+			
+			
+			function flickerSoc(){
+				setTimeout(function flick(){
+					if($('#socPlayerLeft').html() != ''){
+						showSoc($('#player1'), $('#socPlayerLeft'), $('#iconPlayerLeft'));
+					}
+					
+					if($('#socPlayerRight').html() != ''){
+						showSoc($('#player2'), $('#socPlayerRight'), $('#iconPlayerRight'));
+					}
+					
+					if($('#socCommentary1').html() != ''){
+						showSoc($('#commentary1'), $('#socCommentary1'), $('#iconCommentary1'));
+					}
+					
+					if($('#socCommentary2').html() != ''){
+						showSoc($('#commentary2'), $('#socCommentary2'), $('#iconCommentary2'));
+					}
+					setTimeout(flick, 10000);
+				}, 10000);
+			}
+			function showSoc(place, socPlace, icon){
+				place.fadeOut(250);
+				socPlace.fadeIn(250);
+				icon.fadeIn(250);
+				setTimeout(function(){
+					socPlace.fadeOut(250);
+					icon.fadeOut(250);
+					place.fadeIn(250);
+				}, 3000);
+			}
+				
+			function setGame(game){
+				if(game === "melee"){
+					document.getElementById('pagestyle').setAttribute('href', "css/1v1Tournament.css");
+				}
+				if(game === "sm4sh"){
+					document.getElementById('pagestyle').setAttribute('href', "css/smash4small.css");
+				}
+			}
+
+			function setIcon(icon, iconLoc){
+				if(icon === "twitter"){
+					iconLoc.setAttribute('src', "css/twitter-icon.png");
+				}
+				if(icon === "twitch"){
+					iconLoc.setAttribute('src', "css/twitch-icon.png");
+				}
+			}
+				
+				
+			function updateBoard() {
+				if ($('#player1').html() != playerLeft) {
+					$('#player1').fadeOut(250);
+					$('#player1').html(playerLeft);
+					$('#player1').fadeIn(250);
+				}
+				
+				if ($('#player2').html() != playerRight) {
+					$('#player2').fadeOut(250);
+					$('#player2').html(playerRight);
+					$('#player2').fadeIn(250);
+				}
+				
+				if ($('#score1').html() != scoreLeft) {
+					$('#score1').fadeOut(250);
+					$('#score1').html(scoreLeft);
+					$('#score1').fadeIn(250);
+				}
+				
+				if ($('#score2').html() != scoreRight) {
+					$('#score2').fadeOut(250);
+					$('#score2').html(scoreRight);
+					$('#score2').fadeIn(250);
+				}
+				
+				if ($('#round').html() != round) {
+					$('#round').fadeOut(250);
+					$('#round').html(round);
+					$('#round').fadeIn(250);
+				}
+				
+				if ($('#commentary1').html() != commentary1) {
+					$('#commentary1').fadeOut(250);
+					$('#commentary1').html(commentary1);
+					$('#commentary1').fadeIn(250);
+				}
+				
+				if ($('#commentary2').html() != commentary2) {
+					$('#commentary2').fadeOut(250);
+					$('#commentary2').html(commentary2);
+					$('#commentary2').fadeIn(250);
+				}
+				
+				if ($('#socPlayerLeft').html() != socPlayerLeft) {
+					$('#socPlayerLeft').fadeOut(250);
+					$('#socPlayerLeft').html(socPlayerLeft);
+					
+				}
+				
+				if ($('#socPlayerRight').html() != socPlayerRight) {
+					$('#socPlayerRight').fadeOut(250);
+					$('#socPlayerRight').html(socPlayerRight);
+				}
+				
+				if ($('#socCommentary1').html() != socCommentary1) {
+					$('#socCommentary1').fadeOut(250);
+					$('#socCommentary1').html(socCommentary1);
+				}
+				
+				if ($('#socCommentary2').html() != socCommentary2) {
+					$('#socCommentary2').fadeOut(250);
+					$('#socCommentary2').html(socCommentary2);
+				}
+				
+				setIcon(iconPlayerLeft, document.getElementById('iconPlayerLeft'));
+				
+				setIcon(iconPlayerRight, document.getElementById('iconPlayerRight'));
+				setIcon(iconCommentary1, document.getElementById('iconCommentary1'));
+				setIcon(iconCommentary2, document.getElementById('iconCommentary2'));
+			}
+				
+			function updateVariables(xmlDoc){
+				/*game = getValueFromTag(xmlDoc, 'game');
+			
+				if(getValueFromTag(xmlDoc, 'playerLeft') != 'None'){
+					playerLeft = getValueFromTag(xmlDoc, 'playerLeft');
+				}
+				else{
+					playerLeft = '';
+				}
+				if(getValueFromTag(xmlDoc, 'playerRight') != 'None'){
+					playerRight = getValueFromTag(xmlDoc, 'playerRight');
+				}
+				else{
+					playerRight = '';
+				}
+				scoreLeft = getValueFromTag(xmlDoc, 'scoreLeft');
+				scoreRight = getValueFromTag(xmlDoc, 'scoreRight');
+				
+				round = getValueFromTag(xmlDoc, 'round');*/
+				if(getValueFromTag(xmlDoc, 'commentary1') != 'None'){
+					commentary1 = getValueFromTag(xmlDoc, 'commentary1');
+				}
+				else{
+					commentary1 = '';
+				}
+				if(getValueFromTag(xmlDoc, 'commentary2') != 'None'){
+					commentary2 = getValueFromTag(xmlDoc, 'commentary2');
+				}
+				else{
+					commentary2 = '';
+				}
+				/*
+				if(getValueFromTag(xmlDoc, 'socPlayerLeft') != 'None'){
+					socPlayerLeft = getValueFromTag(xmlDoc, 'socPlayerLeft');
+				}
+				else{
+					socPlayerLeft = '';
+				}
+				
+				if(getValueFromTag(xmlDoc, 'socPlayerRight') != 'None'){
+					socPlayerRight = getValueFromTag(xmlDoc, 'socPlayerRight');
+				}
+				else{
+					socPlayerRight = '';
+				}
+				if(getValueFromTag(xmlDoc, 'iconPlayerLeft') != 'None'){
+					iconPlayerLeft = getValueFromTag(xmlDoc, 'iconPlayerLeft');
+				}
+				else{
+					iconPlayerLeft = '';
+				}
+				if(getValueFromTag(xmlDoc, 'iconPlayerRight') != 'None'){
+					iconPlayerRight = getValueFromTag(xmlDoc, 'iconPlayerRight');
+				}
+				else{
+					iconPlayerRight = '';
+				}
+				
+				
+				
+				if(getValueFromTag(xmlDoc, 'socCommentary1') != 'None'){
+					socCommentary1 = getValueFromTag(xmlDoc, 'socCommentary1');
+				}
+				else{
+					socCommentary1 = '';
+				}
+				if(getValueFromTag(xmlDoc, 'socCommentary2') != 'None'){
+					socCommentary2 = getValueFromTag(xmlDoc, 'socCommentary2');
+				}
+				else{
+					socCommentary2 = '';
+				}
+				if(getValueFromTag(xmlDoc, 'iconCommentary1') != 'None'){
+					iconCommentary1 = getValueFromTag(xmlDoc, 'iconCommentary1');
+				}
+				else{
+					iconCommentary1 = '';
+				}
+				if(getValueFromTag(xmlDoc, 'iconCommentary2') != 'None'){
+					iconCommentary2 = getValueFromTag(xmlDoc, 'iconCommentary2');
+				}
+				else{
+					iconCommentary2 = '';
+				}
+				*/
+			}
+			
+			function getValueFromTag(xmlDoc, tag) {
+				if(xmlDoc.getElementsByTagName(tag)[0].childNodes[0].nodeValue.length != 0){
+					tag = xmlDoc.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
+				}
+				else{
+					tag = '';
+				}
+				return tag;
+			}
+			
+			
+			jQuery.extend({
+				getValues: function(url) {
+					var result = null;
+					$.ajax({
+						url: url,
+						type: 'get',
+						dataType: 'xml',
+						async: false,
+						success: function(data) {
+							result = data;
+						}
+					});
+				   return result;
+				}
+			});
+			
+			
+			
+			$(document).ready(function() {
+				$('#player1').html('');
+				$('#player2').html('');
+				$('#score1').html('');
+				$('#score2').html('');
+				$('#round').html('');
+				$('#commentary1').html('');
+				$('#commentary2').html('');
+				var xmlDoc = $.getValues('http://localhost:8000/streamcontrol.xml');
+				updateData();
+				<!--flickerSoc();-->
+				});
+			
+		</script>
+	</body>
+</html>
